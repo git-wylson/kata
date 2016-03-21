@@ -6,7 +6,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 /**
  * This class implements the dispatcher servlet. It allows to run spring mvc without the web.xml
- * @author wylson
+ * @author wylson dibinga
  */
 public class FoobarqixInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

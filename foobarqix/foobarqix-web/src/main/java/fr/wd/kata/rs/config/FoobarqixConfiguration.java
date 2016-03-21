@@ -2,6 +2,7 @@ package fr.wd.kata.rs.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "fr.wd.kata.rs")
+@ImportResource("classpath:/business-autoscan.xml")
 public class FoobarqixConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override

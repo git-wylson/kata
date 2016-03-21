@@ -2,6 +2,8 @@ package fr.wd.kata.business.rules;
 
 import org.springframework.stereotype.Component;
 
+import fr.wd.kata.business.domain.type.EnumFooBarQix;
+
 /**
  * This class calculates FooBarQix algorithm below. This is the subject :<br>
  * if the number is divisible by 3 or contains 3, replace 3 by "Foo";<br>
@@ -29,45 +31,42 @@ public class ValidatorBusinessRules {
 	 * @param number : {@link Integer} an integer
 	 * @return {@link String} result value
 	 */
-	public String calculateNumber(Integer number) {
+	public String calculateNumber(Integer value) {
 		StringBuilder builder = new StringBuilder();
-		// First of all we test if the number is divisible by 3 or 5 or 7
-		if (number != null && number > 0) {
-			if (number % 3 == 0) {
-				builder.append("Foo");
+		if (value != null && value > 0) {
+
+			for (EnumFooBarQix enumFooBarQix : EnumFooBarQix.values()) {
+				ruleMultiple(builder, value, enumFooBarQix);
 			}
 
-			if (number % 5 == 0) {
-				builder.append("Bar");
-			}
+			String svalue = value.toString();
 
-			if (number % 7 == 0) {
-				builder.append("Qix");
-			}
-
-			// We test if the number contains 3 or 5 or 7
-			String svalue = number.toString();
 			for (int index = 0; index < svalue.length(); index++) {
+
 				char posx = svalue.charAt(index);
 
-				if (posx == '3') {
-					builder.append("Foo");
-				}
-
-				if (posx == '5') {
-					builder.append("Bar");
-				}
-
-				if (posx == '7') {
-					builder.append("Qix");
+				for (EnumFooBarQix enumFooBarQix : EnumFooBarQix.values()) {
+					rulePosition(builder, posx, index, enumFooBarQix);
 				}
 			}
 
 			if (builder.length() == 0) {
-				builder.append(number);
+				builder.append(value);
 			}
 		}
 		return builder.toString();
+	}
+
+	private void ruleMultiple(StringBuilder builder, Integer value, EnumFooBarQix enumFooBarQix) {
+		if (value % enumFooBarQix.getMultiple() == 0) {
+			builder.append(enumFooBarQix.getValue());
+		}
+	}
+
+	private void rulePosition(StringBuilder builder, char posx, Integer index, EnumFooBarQix enumFooBarQix) {
+		if (posx == enumFooBarQix.getPosition()) {
+			builder.append(enumFooBarQix.getValue());
+		}
 	}
 
 }

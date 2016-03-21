@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import fr.wd.kata.business.services.FooBarQix;
+import fr.wd.kata.business.domain.FooBarQix;
 import fr.wd.kata.business.services.FoobarqixServiceImpl;
 import fr.wd.kata.business.services.IFoobarqixService;
 

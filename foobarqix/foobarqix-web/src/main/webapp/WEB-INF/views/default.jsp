@@ -19,10 +19,7 @@
 				</button>
 				<a class="navbar-brand" href="#">FooBarQix</a>
 			</div>
-			<div class="collapse navbar-collapse" id="fbqNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				</ul>
+			<div class="collapse navbar-collapse" id="fbqNavbar">				
 			</div>
 		</div>
 	</nav>

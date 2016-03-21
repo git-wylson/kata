@@ -2,6 +2,8 @@ package fr.wd.kata.business.services;
 
 import java.util.List;
 
+import fr.wd.kata.business.domain.FooBarQix;
+
 public interface IFoobarqixService {
 
 	/**
