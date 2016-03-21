@@ -23,7 +23,7 @@ foobarqix
 	|	   | (folders and files)
 	| pom.xml (parent)
 
-1. Module foobarqix-business
+#1. Module foobarqix-business
 1.1. Definition
 - This module contains the business service application and validator business rules. FoobarqixServiceImpl.java implements the service that calculates the operation foobarqix.
 - The FoobarqixServiceImplTest.java class is the test class service.
@@ -34,7 +34,7 @@ foobarqix
 - Console Mode: execute the class AppConsole.java
 
 
-2. Module foobarqix-web
+#2. Module foobarqix-web
 2.1. Definition
 - This module contains the rest Service application. Here uri of this service : http://yourdomain/foobarqix-web/foobarqix
 - Front end layer in AngularJS in order to display the results in the table
