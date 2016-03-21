@@ -21,7 +21,6 @@ import fr.wd.kata.rs.model.FooBarQixRest;
  * @author wylson
  */
 @RestController
-// @ImportResource("classpath:/business-autoscan.xml")
 public class FoobarqixRestController {
 
 	@Autowired
