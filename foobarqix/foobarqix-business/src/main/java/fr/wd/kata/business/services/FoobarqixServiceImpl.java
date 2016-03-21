@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 
 import fr.wd.kata.business.rules.ValidatorBusinessRules;
 
+/**
+ * Business service class. The back end service contains all the processing profession of application
+ * @author wylson dibinga wd
+ */
 @Service
 // @Transactional
 public class FoobarqixServiceImpl implements IFoobarqixService {

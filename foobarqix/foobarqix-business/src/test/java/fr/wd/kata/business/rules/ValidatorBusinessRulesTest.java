@@ -8,6 +8,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
+/**
+ * Unit test with mockito for Business rules
+ * @author wylson dibinga
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class ValidatorBusinessRulesTest {
 

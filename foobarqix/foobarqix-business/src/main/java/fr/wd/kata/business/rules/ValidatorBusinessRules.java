@@ -3,7 +3,7 @@ package fr.wd.kata.business.rules;
 import org.springframework.stereotype.Component;
 
 /**
- * This class calculates FooBarQix algorithm below which the subject :<br>
+ * This class calculates FooBarQix algorithm below. This is the subject :<br>
  * if the number is divisible by 3 or contains 3, replace 3 by "Foo";<br>
  * if the number is divisible by 5 or contains 5, replace 5 by "Bar";<br>
  * if the number is devisible by 7 or contains 7, replace 7 by "Qix".<br>
@@ -25,26 +25,28 @@ public class ValidatorBusinessRules {
 	}
 
 	/**
-	 * The method to calculate l'algorithme FooBarQuix
-	 * @param value
-	 * @return
+	 * The method to calculate FooBarQix algorithm
+	 * @param number : {@link Integer} an integer
+	 * @return {@link String} result value
 	 */
-	public String calculateNumber(Integer value) {
+	public String calculateNumber(Integer number) {
 		StringBuilder builder = new StringBuilder();
-		if (value != null && value > 0) {
-			if (value % 3 == 0) {
+		// First of all we test if the number is divisible by 3 or 5 or 7
+		if (number != null && number > 0) {
+			if (number % 3 == 0) {
 				builder.append("Foo");
 			}
 
-			if (value % 5 == 0) {
+			if (number % 5 == 0) {
 				builder.append("Bar");
 			}
 
-			if (value % 7 == 0) {
+			if (number % 7 == 0) {
 				builder.append("Qix");
 			}
 
-			String svalue = value.toString();
+			// We test if the number contains 3 or 5 or 7
+			String svalue = number.toString();
 			for (int index = 0; index < svalue.length(); index++) {
 				char posx = svalue.charAt(index);
 
@@ -62,7 +64,7 @@ public class ValidatorBusinessRules {
 			}
 
 			if (builder.length() == 0) {
-				builder.append(value);
+				builder.append(number);
 			}
 		}
 		return builder.toString();

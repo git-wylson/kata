@@ -9,7 +9,7 @@
 	<artifactId>foobarqix-web</artifactId>
 	<packaging>war</packaging>
 	<name>${project.artifactId}::WAR</name>
-	<description>>Module web de l'application fooBarQix.</description>
+	<description>Web MVC module for fooBarQix application.</description>
 
 	<properties>
 		<springframework.version>4.2.4.RELEASE</springframework.version>
@@ -21,11 +21,13 @@
 	</properties>
 
 	<dependencies>
+		<!-- Business module Dependency -->
 		<dependency>
 			<groupId>fr.wd.kata</groupId>
 			<artifactId>foobarqix-business</artifactId>
 		</dependency>
 
+		<!-- Sping mvc framework Dependency -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -37,6 +39,7 @@
 			<version>${springframework.version}</version>
 		</dependency>
 
+		<!-- Other dependency -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>

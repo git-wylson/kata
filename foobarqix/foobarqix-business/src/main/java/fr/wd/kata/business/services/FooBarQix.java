@@ -1,5 +1,9 @@
 package fr.wd.kata.business.services;
 
+/**
+ * Business class for FooBarQix. The object who allows to set the number and result
+ * @author wylson
+ */
 public class FooBarQix {
 
 	private Integer index;
@@ -10,6 +14,7 @@ public class FooBarQix {
 		this.result = result;
 	}
 
+	// Getters et setters
 	public Integer getIndex() {
 		return index;
 	}

@@ -10,39 +10,32 @@
 	<artifactId>foobarqix-business</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}::JAR</name>
-	<description>>Module metier de l'application fooBarQix.</description>
+	<description>>Business module for fooBarQix application.</description>
 
 	<properties>
 		<springframework.version>4.2.4.RELEASE</springframework.version>
 		<junit.version>4.12</junit.version>
 		<mockito-all.version>2.0.2-beta</mockito-all.version>
-		<fest-assert.version>1.4</fest-assert.version>
-		<commons-lang3.version>3.4</commons-lang3.version>
+		<fest-assert.version>1.4</fest-assert.version>		 
 	</properties>
 
 	<dependencies>
+		<!-- Spring Dependency -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.commons</groupId> -->
-		<!-- <artifactId>commons-lang3</artifactId> -->
-		<!-- <version>${commons-lang3.version}</version> -->
-		<!-- </dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.google.guava</groupId> -->
-<!-- 			<artifactId>guava</artifactId> -->
-<!-- 			<version>${guava.version}</version> -->
-<!-- 		</dependency> -->
-
+		
+		<!-- Spring test Dependency -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Test Dependency -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

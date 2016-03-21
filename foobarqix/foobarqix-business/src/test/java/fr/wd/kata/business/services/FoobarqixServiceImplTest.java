@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+/**
+ * Testing integration with Spring
+ * @author wylson dibinga wd
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/business-autoscan.xml" })
 public class FoobarqixServiceImplTest {
@@ -18,7 +22,7 @@ public class FoobarqixServiceImplTest {
 	private FoobarqixServiceImpl foobarqixService;
 
 	@Test
-	public void test_calculteNumber_Should_Test_The_All_fonctional_method() {
+	public void test_calculteNumber_Should_Test_The_fonctional_method() {
 		// Given
 		Integer maxNumber = 100;
 
