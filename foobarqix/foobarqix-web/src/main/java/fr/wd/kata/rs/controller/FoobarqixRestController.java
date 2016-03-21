@@ -17,6 +17,10 @@ import fr.wd.kata.business.services.IFoobarqixService;
 import fr.wd.kata.rs.converter.FooBarQixConverter;
 import fr.wd.kata.rs.model.FooBarQixRest;
 
+/**
+ * This class is the service rest for application
+ * @author wylson
+ */
 @RestController
 @ImportResource("classpath:/business-autoscan.xml")
 public class FoobarqixRestController {

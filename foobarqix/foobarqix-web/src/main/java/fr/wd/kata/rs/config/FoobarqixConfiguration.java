@@ -9,6 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+/**
+ * This class configure the mvc access
+ * @author wylson
+ */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "fr.wd.kata.rs")

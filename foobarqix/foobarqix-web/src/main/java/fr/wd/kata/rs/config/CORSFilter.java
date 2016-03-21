@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * This Class all
+ * This class defines a way in which a browser and server can interact to determine safely whether or not to allow the cross-origin request
  * @author wylson dibinga
  */
 public class CORSFilter implements Filter {

@@ -5,6 +5,7 @@ import javax.servlet.Filter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
+ * This class implements the dispatcher servlet. It allows to run spring mvc without the web.xml
  * @author wylson
  */
 public class FoobarqixInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

@@ -35,7 +35,7 @@
 				If you want to see the subject about this problem,<a href="https://gist.github.com/dlresende/60b4c0240ad020a323ad"> click here</a>
 			</p>
 			<p>
-				If you want to download the solution about this problem,<a href="#"> click here</a>
+				If you want to download the solution about this problem,<a href="https://github.com/git-wylson/kata"> click here</a>
 			</p>
 			<hr>
 			<div class="panel panel-default">

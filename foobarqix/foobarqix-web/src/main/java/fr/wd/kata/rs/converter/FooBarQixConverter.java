@@ -7,6 +7,10 @@ import com.google.common.base.Converter;
 import fr.wd.kata.business.services.FooBarQix;
 import fr.wd.kata.rs.model.FooBarQixRest;
 
+/**
+ * This class convert business model to transfert object data
+ * @author wylson dibinga
+ */
 @Component
 public class FooBarQixConverter extends Converter<FooBarQixRest, FooBarQix> {
 
