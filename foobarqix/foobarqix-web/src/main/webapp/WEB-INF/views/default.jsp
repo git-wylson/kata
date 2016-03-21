@@ -5,6 +5,7 @@
 <title>FooBarQix</title>
 
 <link rel="stylesheet" href="<c:url value='/static/css/bootstrap.min.css' />">
+<link rel="stylesheet" href="<c:url value='/static/lib/bootstrap-table.css' />">
 <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
 <body ng-app="fbqApp" class="ng-cloak">
@@ -40,22 +41,8 @@
 				<div class="panel-heading">
 					<span class="lead">List of Results </span>
 				</div>
-				<div class="tablecontainer">
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>Number</th>
-								<th>Result</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="n in ctrl.results">
-								<td><span ng-bind="n.number"></span></td>
-								<td><span ng-bind="n.result"></span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+ 
+				<table bs-table-control="bsTableFbq"></table>
 			</div>
 		</div>
 	</div>
@@ -64,7 +51,11 @@
 		<h6>© Copyright 2016, wylson-dibinga@hotmail.fr, All rights reserved.</h6>
 	</footer>
 
+	<script src="<c:url value='/static/lib/jquery.min.js' />"></script>
+	<script src="<c:url value='/static/lib/bootstrap.min.js' />"></script>
 	<script src="<c:url value='/static/lib/angular.js' />"></script>
+	<script src="<c:url value='/static/lib/bootstrap-table.js' />"></script>
+	<script src="<c:url value='/static/lib/bootstrap-table-angular.js' />"></script>
 	<script src="<c:url value='/static/js/fonction.utils.js' />"></script>
 	<script src="<c:url value='/static/js/app.js' />"></script>
 	<script src="<c:url value='/static/js/service/fbq.service.js' />"></script>

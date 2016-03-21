@@ -1,6 +1,6 @@
 'use strict';
 
-App.factory('FbqService', ['$http', '$q', function($http, $q){
+fbqApp.factory('FbqService', ['$http', '$q', function($http, $q){
 	// domaine = http://localhost:8080/foobarqix-web
 	var domaine = getCurrentDomainUtils();
 

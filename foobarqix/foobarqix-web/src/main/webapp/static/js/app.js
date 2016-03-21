@@ -1,5 +1,5 @@
 'use strict';
 
-var App = angular.module('fbqApp',[]);
+var fbqApp = angular.module('fbqApp',['bsTable']);
 
 

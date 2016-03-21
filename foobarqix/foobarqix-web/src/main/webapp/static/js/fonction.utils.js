@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 function getCurrentDomainUtils() {
 	var urlApp = window.location.href;
 	var tab = urlApp.split("/");
