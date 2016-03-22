@@ -35,8 +35,8 @@ foobarqix
 
 
 #2. Module foobarqix-web
-2.1. Definition 
-This module contains :
+2.1. Definition :
+This module contains
 - The rest Service application. Here uri of this service : http://yourdomain/foobarqix-web/foobarqix
 - The front end layer in AngularJS in order to display the results in the table
 
