@@ -2,7 +2,7 @@ package fr.wd.kata.business.rules;
 
 import org.springframework.stereotype.Component;
 
-import fr.wd.kata.business.domain.type.EnumFooBarQix;
+import fr.wd.kata.business.domain.type.FooBarQixEnum;
 
 /**
  * This class calculates FooBarQix algorithm below. This is the subject :<br>
@@ -35,7 +35,7 @@ public class ValidatorBusinessRules {
 		StringBuilder builder = new StringBuilder();
 		if (value != null && value > 0) {
 
-			for (EnumFooBarQix enumFooBarQix : EnumFooBarQix.values()) {
+			for (FooBarQixEnum enumFooBarQix : FooBarQixEnum.values()) {
 				ruleMultiple(builder, value, enumFooBarQix);
 			}
 
@@ -45,8 +45,8 @@ public class ValidatorBusinessRules {
 
 				char posx = svalue.charAt(index);
 
-				for (EnumFooBarQix enumFooBarQix : EnumFooBarQix.values()) {
-					rulePosition(builder, posx, index, enumFooBarQix);
+				for (FooBarQixEnum enumFooBarQix : FooBarQixEnum.values()) {
+					rulePosition(builder, posx, enumFooBarQix);
 				}
 			}
 
@@ -57,13 +57,25 @@ public class ValidatorBusinessRules {
 		return builder.toString();
 	}
 
-	private void ruleMultiple(StringBuilder builder, Integer value, EnumFooBarQix enumFooBarQix) {
+	/**
+	 * This method calculates if the number(value) is divisible by 3,5 or 7
+	 * @param builder {@link StringBuilder} : Object to set the result
+	 * @param value {@link Integer} : multiple number
+	 * @param enumFooBarQix {@link FooBarQixEnum} : enumeration which contains all values FooBarQix
+	 */
+	private void ruleMultiple(StringBuilder builder, Integer value, FooBarQixEnum enumFooBarQix) {
 		if (value % enumFooBarQix.getMultiple() == 0) {
 			builder.append(enumFooBarQix.getValue());
 		}
 	}
 
-	private void rulePosition(StringBuilder builder, char posx, Integer index, EnumFooBarQix enumFooBarQix) {
+	/**
+	 * This method calculates if the number contains 3,5 or 7
+	 * @param builder {@link StringBuilder} : Object to set the result
+	 * @param posx {@link Integer} : position of number in the order they appear
+	 * @param enumFooBarQix {@link FooBarQixEnum} : enumeration which contains all values FooBarQix
+	 */
+	private void rulePosition(StringBuilder builder, char posx, FooBarQixEnum enumFooBarQix) {
 		if (posx == enumFooBarQix.getPosition()) {
 			builder.append(enumFooBarQix.getValue());
 		}

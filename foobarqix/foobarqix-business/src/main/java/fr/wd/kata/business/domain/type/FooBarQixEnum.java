@@ -1,6 +1,6 @@
 package fr.wd.kata.business.domain.type;
 
-public enum EnumFooBarQix {
+public enum FooBarQixEnum {
     FOO("Foo", 3, '3'),
     BAR("Bar", 5, '5'),
     QIX("Qix", 7, '7');
@@ -11,7 +11,7 @@ public enum EnumFooBarQix {
 
     private char position;
 
-    EnumFooBarQix(String value, Integer multiple, char position) {
+    FooBarQixEnum(String value, Integer multiple, char position) {
         this.value = value;
         this.multiple = multiple;
         this.position = position;

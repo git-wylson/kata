@@ -35,9 +35,10 @@ foobarqix
 
 
 #2. Module foobarqix-web
-2.1. Definition
-- This module contains the rest Service application. Here uri of this service : http://yourdomain/foobarqix-web/foobarqix
-- Front end layer in AngularJS in order to display the results in the table
+2.1. Definition 
+This module contains :
+- The rest Service application. Here uri of this service : http://yourdomain/foobarqix-web/foobarqix
+- The front end layer in AngularJS in order to display the results in the table
 
 2.2. Execution
 - Import foobarqix parent project in eclipse as maven project
