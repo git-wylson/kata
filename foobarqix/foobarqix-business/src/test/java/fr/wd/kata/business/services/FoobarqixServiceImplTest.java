@@ -21,7 +21,7 @@ import fr.wd.kata.business.domain.FooBarQix;
 public class FoobarqixServiceImplTest {
 
 	@Autowired
-	private FoobarqixServiceImpl foobarqixService;
+	private IFoobarqixService foobarqixService;
 
 	@Test
 	public void test_calculteNumber_Should_Test_The_fonctional_method() {
