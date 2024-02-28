@@ -1,0 +1,1997 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API BCPCMR Microservice de Médiation",
+    "description": "API de Synchronisation des données RET vers BCP",
+    "contact": {
+      "name": "BCP Team",
+      "email": "lt_mill-rbcp-referentiels_bcp@bpifrance.fr"
+    },
+    "license": {
+      "name": "BCP Team",
+      "url": "https://bcp.cepme150.fr/bcp-ihm-web"
+    },
+    "version": "V1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://bcp-cmr.stg.apps.web.bpifrance.fr/cmr",
+      "description": "Server URL"
+    }
+  ],
+  "paths": {
+    "/rest/v1/person-role/synchronise": {
+      "post": {
+        "tags": [
+          "person-role-ret-to-bcp-orchestration-controller"
+        ],
+        "operationId": "updateLegalPerson",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonRolePayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/person-party/synchronise": {
+      "post": {
+        "tags": [
+          "person-party-ret-to-bcp-orchestration-controller"
+        ],
+        "operationId": "updatePersonParty",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonPartyPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/person-party-test/synchronise": {
+      "post": {
+        "tags": [
+          "person-party-ret-to-bcp-event-controller-test"
+        ],
+        "operationId": "updatePersonParty_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonPartyPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/legal-person/synchronise": {
+      "post": {
+        "tags": [
+          "personne-morale-ret-to-bcp-orchestration-controller"
+        ],
+        "operationId": "updateLegalPerson_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonneMoraleRetPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/contact-role/synchronise": {
+      "post": {
+        "tags": [
+          "contact-role-ret-to-bcp-orchestration-controller"
+        ],
+        "operationId": "updateLegalPerson_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactInformationDataPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/beneficiary/link/synchronise": {
+      "post": {
+        "tags": [
+          "beneficiary-ret-to-bcp-orchestration-controller"
+        ],
+        "operationId": "synchronizeLink",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeneficiaryLinkPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/beneficiary/group/synchronise": {
+      "post": {
+        "tags": [
+          "beneficiary-ret-to-bcp-orchestration-controller"
+        ],
+        "operationId": "synchronizeGroup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeneficiaryGroupPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/bank/synchronise": {
+      "post": {
+        "tags": [
+          "bank-ret-to-bcp-orchestration-controller"
+        ],
+        "operationId": "updateLegalPerson_3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankDetailsPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/address/synchronise": {
+      "post": {
+        "tags": [
+          "adresse-ret-to-bcp-orchestration-controller"
+        ],
+        "operationId": "updateLegalPerson_4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PhysicalContactPointPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/user/commercial": {
+      "get": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "operationId": "validProfilCommercial",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/user/authorities": {
+      "get": {
+        "tags": [
+          "user-rest-controller"
+        ],
+        "operationId": "getPrincipalInfo",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/public/composant": {
+      "get": {
+        "tags": [
+          "public-rest-controller"
+        ],
+        "operationId": "consulterNomComposant",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/etablissement-tiers/{idTiers}": {
+      "get": {
+        "tags": [
+          "etablissement-tiers-matching-controller"
+        ],
+        "operationId": "updateLegalPerson_5",
+        "parameters": [
+          {
+            "name": "idTiers",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/EtablissementRestBCP"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/cache/clear/{cacheNameEntity}": {
+      "get": {
+        "tags": [
+          "cache-rest-controller"
+        ],
+        "operationId": "clearByCacheNameEntity",
+        "parameters": [
+          {
+            "name": "cacheNameEntity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/cache/clear/{cacheNameEntity}/string/{idEntity}": {
+      "get": {
+        "tags": [
+          "cache-rest-controller"
+        ],
+        "operationId": "clearByStringIdEntity",
+        "parameters": [
+          {
+            "name": "cacheNameEntity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idEntity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/v1/cache/clear/{cacheNameEntity}/integer/{idEntity}": {
+      "get": {
+        "tags": [
+          "cache-rest-controller"
+        ],
+        "operationId": "clearByIntegerIdEntity",
+        "parameters": [
+          {
+            "name": "cacheNameEntity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idEntity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorDetails": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      },
+      "HeaderEvent": {
+        "required": [
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          }
+        }
+      },
+      "PersonRolePayload": {
+        "required": [
+          "offset",
+          "personPId",
+          "personRoleTypeGId"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          },
+          "personRoleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "personRoleTypeGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "personPId": {
+            "type": "number"
+          },
+          "organisationPId": {
+            "type": "number"
+          },
+          "activationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "terminationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "personRoleCertificationStatusGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "legacyInterlocutorId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "PersonPartyPayload": {
+        "required": [
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          },
+          "idPP": {
+            "type": "number"
+          },
+          "namePrefixGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "birthName": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "mainFirstName": {
+            "type": "string"
+          },
+          "firstNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "nationalityGIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "frPlaceOfBirthGId": {
+            "type": "string"
+          },
+          "countryOfBirthGId": {
+            "type": "string"
+          },
+          "outOfFrBirthPostCode": {
+            "type": "string"
+          },
+          "outOfFrPlaceOfBirth": {
+            "type": "string"
+          },
+          "commercialStatusGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isComplianceAlertActivated": {
+            "type": "boolean"
+          },
+          "cpNumbers": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "IdentifiantPM": {
+        "required": [
+          "organisationIdentificationTypeGId"
+        ],
+        "type": "object",
+        "properties": {
+          "organisationIdentificationTypeGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "organisationIdentificationValue": {
+            "type": "string"
+          },
+          "startingDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "closingDate": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "PersonneMoraleRetPayload": {
+        "required": [
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          },
+          "organisationPartyID": {
+            "type": "number"
+          },
+          "isCertified": {
+            "type": "boolean"
+          },
+          "legalName": {
+            "type": "string"
+          },
+          "registrationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "registrationCountryGId": {
+            "type": "string"
+          },
+          "organisationIdentification": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentifiantPM"
+            }
+          },
+          "legalCategoryGId": {
+            "type": "string"
+          },
+          "nafCodeGId": {
+            "type": "string"
+          },
+          "commercialStatusGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "isListedCompany": {
+            "type": "boolean"
+          },
+          "isComplianceAlertActivated": {
+            "type": "boolean"
+          },
+          "organisationPartyTypeGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cpNumbers": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "tradingName": {
+            "type": "string"
+          },
+          "isActiveForInsee": {
+            "type": "boolean"
+          },
+          "bafiCodeGId": {
+            "type": "string"
+          },
+          "gicsCodeGId": {
+            "type": "string"
+          },
+          "parentLegalEntityPId": {
+            "type": "number"
+          },
+          "naceCodeGId": {
+            "type": "string"
+          },
+          "missingSirenSiretJustificationGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "partnerSubSetGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isPartner": {
+            "type": "boolean"
+          },
+          "parentBankPId": {
+            "type": "number"
+          },
+          "resCodeGId": {
+            "type": "string"
+          },
+          "europeanOrganisationSizeGId": {
+            "type": "string"
+          },
+          "organisationInDifficultyGId": {
+            "type": "string"
+          },
+          "legalFormGId": {
+            "type": "string"
+          },
+          "shareCapital": {
+            "type": "number"
+          }
+        }
+      },
+      "ContactInformationDataPayload": {
+        "required": [
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          },
+          "contactPersonRoleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contactPointTypeGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contactPoint": {
+            "type": "string"
+          },
+          "phoneCountryCode": {
+            "type": "string"
+          }
+        }
+      },
+      "BeneficiaryLinkPayload": {
+        "required": [
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          },
+          "simpleLegalPersonTpId": {
+            "type": "number"
+          },
+          "simpleCounterpartyOrganisationPId": {
+            "type": "number"
+          },
+          "simpleCounterpartyPersonPId": {
+            "type": "number"
+          },
+          "beneficiaryGroupId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activationDate": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "terminationDate": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "connectionReasonGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isConsolidating": {
+            "type": "boolean"
+          }
+        }
+      },
+      "BeneficiaryGroupPayload": {
+        "required": [
+          "offset",
+          "pivotCounterpartyOrganisationPId",
+          "pivotCounterpartyPersonPId"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          },
+          "pivotCounterpartyOrganisationPId": {
+            "type": "number"
+          },
+          "pivotCounterpartyPersonPId": {
+            "type": "number"
+          }
+        }
+      },
+      "BankDetailsPayload": {
+        "required": [
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          },
+          "bankCounterOrganisationPId": {
+            "type": "number"
+          },
+          "accountOwnerOrganisationPId": {
+            "type": "number"
+          },
+          "accountOwnerPersonPId": {
+            "type": "number"
+          },
+          "countryCodeGId": {
+            "type": "string"
+          },
+          "ibanCheckDigits": {
+            "type": "string"
+          },
+          "bankAccountNumber": {
+            "type": "string"
+          },
+          "ribKey": {
+            "type": "string"
+          },
+          "accountOwnerName": {
+            "type": "string"
+          },
+          "ibanTypeGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountIdentificationCertificationStatusGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountIdentificationCertificationReasonGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "certificationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "accountOwnerFundPId": {
+            "type": "number"
+          },
+          "iban": {
+            "type": "string"
+          },
+          "bic": {
+            "type": "string"
+          },
+          "openingDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "closingDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "inactiveReasonGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bankDetailsId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "PhysicalContactPointPayload": {
+        "required": [
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identity": {
+            "type": "string"
+          },
+          "globalKey": {
+            "type": "string"
+          },
+          "sourceDomain": {
+            "type": "string"
+          },
+          "headerData": {
+            "$ref": "#/components/schemas/HeaderEvent"
+          },
+          "physicalAddressId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "organisationPId": {
+            "type": "number"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "address3": {
+            "type": "string"
+          },
+          "address4": {
+            "type": "string"
+          },
+          "administrationSubDepartment": {
+            "type": "string"
+          },
+          "frLocationGId": {
+            "type": "string"
+          },
+          "frLocationLabel": {
+            "type": "string"
+          },
+          "frLocationPostCode": {
+            "type": "string"
+          },
+          "postCodeComplement": {
+            "type": "string"
+          },
+          "countryGId": {
+            "type": "string"
+          },
+          "countryLabel": {
+            "type": "string"
+          },
+          "outOfFrTown": {
+            "type": "string"
+          },
+          "outOfFrPostCode": {
+            "type": "string"
+          },
+          "physicalContactPointTypeGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "physicalContactPointTypeLabel": {
+            "type": "string"
+          },
+          "physicalContactPointValidityStatusGId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "physicalContactPointValidityStatusLabel": {
+            "type": "string"
+          },
+          "parentLegalEntityPId": {
+            "type": "string"
+          },
+          "organisationPartyTypeGId": {
+            "type": "string"
+          },
+          "organisationPartyTypeLabel": {
+            "type": "string"
+          }
+        }
+      },
+      "AdresseRest": {
+        "type": "object",
+        "properties": {
+          "codeSocieteGestion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroRelationAffaire": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroEtablissement": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "identifiantAdresse": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dateDebutValiditeAdresse": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bureauDistributeur": {
+            "type": "string"
+          },
+          "indicatifPays": {
+            "type": "string"
+          },
+          "libellePays": {
+            "type": "string"
+          },
+          "codePostal": {
+            "type": "string"
+          },
+          "codeTypeAdresse": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "libelleTypeAdresse": {
+            "type": "string"
+          },
+          "nomVoie": {
+            "type": "string"
+          },
+          "numeroVoie": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codeTypeVoie": {
+            "type": "string"
+          },
+          "libelleTypeVoie": {
+            "type": "string"
+          },
+          "codeBis": {
+            "type": "string"
+          },
+          "libelleBis": {
+            "type": "string"
+          },
+          "localite": {
+            "type": "string"
+          },
+          "ligne1": {
+            "type": "string"
+          },
+          "ligne2": {
+            "type": "string"
+          },
+          "ligne3": {
+            "type": "string"
+          },
+          "dateFinValiditeAdresse": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "matriculeCreationAdresse": {
+            "type": "string"
+          },
+          "dateCreationAdresse": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "matriculeModificationAdresse": {
+            "type": "string"
+          },
+          "dateModificationAdresse": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "numeroSiren": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroInterneClassement": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "adLigne1": {
+            "type": "string"
+          },
+          "adLigne2": {
+            "type": "string"
+          },
+          "adLigne3": {
+            "type": "string"
+          },
+          "adCodePostal": {
+            "type": "string"
+          },
+          "adBureauDistributeur": {
+            "type": "string"
+          },
+          "adRegion": {
+            "type": "string"
+          }
+        }
+      },
+      "EtablissementRestBCP": {
+        "type": "object",
+        "properties": {
+          "numeroEtablissement": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "enseigneCommerciale": {
+            "type": "string"
+          },
+          "enseigneCommercialeLongue": {
+            "type": "string"
+          },
+          "codeStatut": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codeSocieteGestion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroRelationAffaire": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroSiren": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroInterneClassement": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codeMotifAbsenceNic": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "libelleMotifAbsenceNic": {
+            "type": "string"
+          },
+          "dateCreationEtablissement": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estSiege": {
+            "type": "boolean"
+          },
+          "identifiantAdresse": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dateDebutValiditeAdresse": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "identifiantActiviteEconomique": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codeActiviteEconomique": {
+            "type": "string"
+          },
+          "libelleActiviteEconomique": {
+            "type": "string"
+          },
+          "codeStatutInsee": {
+            "type": "string"
+          },
+          "libelleStatutInsee": {
+            "type": "string"
+          },
+          "indiceClassement": {
+            "type": "string"
+          },
+          "libelleStatut": {
+            "type": "string"
+          },
+          "numeroTelephone": {
+            "type": "string"
+          },
+          "numeroTelecopie": {
+            "type": "string"
+          },
+          "commentaire": {
+            "type": "string"
+          },
+          "dateFinValidite": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "matriculeCreation": {
+            "type": "string"
+          },
+          "dateCreation": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "matriculeModification": {
+            "type": "string"
+          },
+          "dateModification": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "matriculeModificationBatch": {
+            "type": "string"
+          },
+          "dateModificationBatch": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "adresseEtablissement": {
+            "$ref": "#/components/schemas/AdresseRest"
+          }
+        }
+      }
+    }
+  }
+}
